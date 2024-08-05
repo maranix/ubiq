@@ -1,0 +1,12 @@
+targets:
+  $default:
+    builders:
+      # only to resolve build_runner conflicts
+      dart_mappable_builder:
+        options:
+          caseStyle: camelCase # or 'camelCase', 'snakeCase', etc.
+          enumCaseStyle: camelCase
+          build_extensions:
+            'lib/src/{{file}}.dart':
+              - 'lib/generated/{{file}}.mapper.dart'
+              - 'lib/generated/{{file}}.init.dart'      # the case style for the map keys, defaults to 'none'
